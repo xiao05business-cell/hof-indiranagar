@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoF — High on Food | Fresh Home-Style Tiffins in Indiranagar, Bengaluru</title>
+<meta name="description" content="Fresh home-style tiffins and daily meals in Indiranagar, Bengaluru. Order direct, zero app markup.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{navy:'#0B192C',olive:'#4D4827',ivory:'#FAF7F2',em:'#15803D'},fontFamily:{serif:['Fraunces','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}}}}
+</script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Inter,system-ui,sans-serif;color:#0B192C}
+.ph{background:linear-gradient(135deg,#FAF7F2,#e9e2cf)}
+.glass{background:rgba(255,255,255,.82);backdrop-filter:blur(14px)}
+.tab[aria-pressed=true]{background:#0B192C;color:#fff;border-color:#0B192C}
+.seg[aria-pressed=true]{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12);font-weight:600}
+#drawer{transition:transform .3s ease}
+details summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(180deg)}
+:focus-visible{outline:2px solid #15803D;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- Top trust bar -->
+<div class="bg-navy text-white text-xs">
+ <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-x-6 gap-y-1 justify-center md:justify-between items-center">
+  <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Delivering across Indiranagar, Bengaluru</span>
+  <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i>Fresh dispatch at 8 AM and 7 PM, daily</span>
+  <span class="flex items-center gap-4">
+   <a href="tel:+919102865869" class="flex items-center gap-1.5 hover:text-[#d9c98a]"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91 91028 65869</a>
+   <a href="https://instagram.com/highonfood.blr" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-[#d9c98a]"><i data-lucide="instagram" class="w-3.5 h-3.5"></i>@highonfood.blr</a>
+  </span>
+ </div>
+</div>
+
+<!-- Navbar -->
+<header class="sticky top-0 z-40 glass border-b border-black/5">
+ <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+  <a href="#top" aria-label="HoF High on Food home"><span data-logo></span></a>
+  <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-navy/80">
+   <a href="#menu" class="hover:text-em">Menu &amp; Pricing</a><a href="#weekly" class="hover:text-em">Weekly Chart</a><a href="#plans" class="hover:text-em">Meal Plans</a><a href="#reviews" class="hover:text-em">Reviews</a><a href="#corporate" class="hover:text-em">Corporate</a>
+  </nav>
+  <div class="flex items-center gap-2">
+   <button id="openCart" class="relative p-2.5 rounded-full border border-navy/15 hover:bg-ivory" aria-label="Open cart"><i data-lucide="shopping-bag" class="w-5 h-5"></i><span id="badge" class="absolute -top-1 -right-1 bg-em text-white text-[10px] font-semibold w-5 h-5 rounded-full grid place-items-center">0</span></button>
+   <a href="#menu" class="hidden sm:inline-block bg-em hover:bg-green-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full">Order Direct</a>
+   <button id="burger" class="lg:hidden p-2.5" aria-label="Menu"><i data-lucide="menu" class="w-5 h-5"></i></button>
+  </div>
+ </div>
+ <nav id="mobnav" class="hidden lg:hidden border-t border-black/5 bg-white px-4 py-3 text-sm font-medium grid gap-3">
+  <a href="#menu">Menu &amp; Pricing</a><a href="#weekly">Weekly Chart</a><a href="#plans">Meal Plans</a><a href="#reviews">Reviews</a><a href="#corporate">Corporate</a>
+ </nav>
+</header>
+
+<main id="top">
+<!-- Hero -->
+<section class="max-w-7xl mx-auto px-4 pt-12 pb-16 lg:pt-20 grid lg:grid-cols-2 gap-12 items-center">
+ <div>
+  <span class="inline-flex items-center gap-2 bg-ivory border border-olive/20 text-olive text-sm font-medium px-4 py-1.5 rounded-full"><i data-lucide="leaf" class="w-4 h-4"></i>Indiranagar’s Fresh Home-Style Tiffin &amp; Meal Kitchen</span>
+  <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] mt-6 text-navy">Wholesome, Home-Style Tiffins &amp; Macro Meals Cooked Fresh Daily.</h1>
+  <p class="mt-6 text-lg text-navy/70 max-w-xl leading-relaxed">Zero preservatives. Zero Zomato or Swiggy commission markup. A rotating daily menu, cooked in our Indiranagar kitchen and sent to your door.</p>
+  <div class="mt-8 flex flex-wrap gap-3">
+   <a href="#menu" class="bg-em hover:bg-green-800 text-white font-semibold px-7 py-3.5 rounded-full">Explore Menu &amp; Prices</a>
+   <a href="#weekly" class="border border-navy/20 hover:bg-ivory font-semibold px-7 py-3.5 rounded-full">View Weekly Meal Chart</a>
+  </div>
+  <dl class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-navy/10 pt-8">
+   <div><dt class="font-serif text-2xl text-olive">100%</dt><dd class="text-xs text-navy/60 mt-1">Freshly cooked daily</dd></div>
+   <div><dt class="font-serif text-2xl text-olive">4.9★</dt><dd class="text-xs text-navy/60 mt-1">Google rating</dd></div>
+   <div><dt class="font-serif text-2xl text-olive">Zero</dt><dd class="text-xs text-navy/60 mt-1">App markup</dd></div>
+   <div><dt class="font-serif text-2xl text-olive">FSSAI</dt><dd class="text-xs text-navy/60 mt-1">Certified kitchen</dd></div>
+  </dl>
+ </div>
+ <div class="relative">
+  <div class="ph rounded-[2rem] overflow-hidden aspect-[4/5] sm:aspect-square shadow-xl">
+   <img src="./hero-homestyle-thali.jpg" alt="HoF home-style thali" class="w-full h-full object-cover" onerror="this.style.display='none'">
+  </div>
+  <div class="glass absolute left-4 bottom-6 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-3"><i data-lucide="badge-check" class="w-6 h-6 text-em"></i><span class="text-sm font-semibold">Save 25% vs Delivery Apps</span></div>
+  <div class="glass absolute right-4 top-6 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2"><i data-lucide="star" class="w-5 h-5 text-[#B8963E] fill-[#B8963E]"></i><span class="text-sm font-semibold">4.9★ Rated in Indiranagar</span></div>
+ </div>
+</section>
+
+<!-- Menu -->
+<section id="menu" class="bg-ivory py-20">
+ <div class="max-w-7xl mx-auto px-4">
+  <h2 class="font-serif text-3xl sm:text-4xl">Menu &amp; direct-order pricing</h2>
+  <p class="mt-3 text-navy/70 max-w-xl">Pick a portion, add to your order, and check out on WhatsApp. Every meal is cooked the same day.</p>
+  <div id="tabs" class="mt-8 flex flex-wrap gap-2"></div>
+  <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+ </div>
+</section>
+
+<!-- Weekly menu -->
+<section id="weekly" class="py-20">
+ <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+  <button id="zoomBtn" class="ph relative rounded-3xl overflow-hidden border border-navy/10 shadow-lg group text-left aspect-[4/3]" aria-label="Zoom weekly menu">
+   <img src="./hof-weekly-menu.jpg" alt="HoF weekly breakfast and dinner menu" class="w-full h-full object-cover" onerror="this.style.display='none'">
+   <span class="absolute bottom-4 left-4 bg-navy text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2"><i data-lucide="zoom-in" class="w-4 h-4"></i>Click to Zoom Full Weekly Menu</span>
+  </button>
+  <div>
+   <h2 class="font-serif text-3xl sm:text-4xl">Breakfast and dinner, planned for the whole week</h2>
+   <p class="mt-4 text-navy/70 leading-relaxed">Our menu changes every day so you never eat the same thing twice in a row. Open the full chart to read each day’s breakfast and dinner, then subscribe and we’ll handle the rest.</p>
+   <div class="mt-8 flex flex-wrap gap-3">
+    <button id="zoomBtn2" class="border border-navy/20 hover:bg-ivory font-semibold px-6 py-3 rounded-full">Zoom Weekly Menu</button>
+    <a href="#plans" class="bg-em hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-full">Subscribe to Weekly Plan</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Plans -->
+<section id="plans" class="bg-ivory py-20">
+ <div class="max-w-7xl mx-auto px-4">
+  <h2 class="font-serif text-3xl sm:text-4xl text-center">Simple tiffin plans, clear prices</h2>
+  <p class="mt-3 text-navy/70 text-center">No hidden charges. Pause or skip any day.</p>
+  <div id="planGrid" class="mt-12 grid md:grid-cols-3 gap-6 items-stretch"></div>
+ </div>
+</section>
+
+<!-- Corporate -->
+<section id="corporate" class="py-20">
+ <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+  <div class="ph rounded-3xl overflow-hidden aspect-[4/3] shadow-lg"><img src="./bulk-corporate-meals.jpg" alt="Bulk corporate meal trays" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+  <div>
+   <h2 class="font-serif text-3xl sm:text-4xl">Corporate &amp; bulk meal boxes</h2>
+   <p class="mt-3 text-navy/70">Team lunches, offsites and events. Slide to estimate your price, then send the inquiry on WhatsApp.</p>
+   <div class="mt-8 bg-ivory rounded-3xl p-6 border border-olive/15">
+    <div class="flex justify-between items-baseline"><label for="bulk" class="font-medium">Meal trays</label><span id="bulkN" class="font-serif text-3xl text-olive">10</span></div>
+    <input id="bulk" type="range" min="10" max="100" step="5" value="10" class="w-full mt-4 accent-[#15803D]">
+    <div class="flex justify-between text-xs text-navy/50 mt-1"><span>10</span><span>100</span></div>
+    <dl class="mt-6 grid grid-cols-3 gap-4 text-sm">
+     <div><dt class="text-navy/60">Per tray</dt><dd id="bulkP" class="font-semibold text-lg"></dd></div>
+     <div><dt class="text-navy/60">Discount</dt><dd id="bulkD" class="font-semibold text-lg text-em"></dd></div>
+     <div><dt class="text-navy/60">Total</dt><dd id="bulkT" class="font-semibold text-lg"></dd></div>
+    </dl>
+    <p class="text-xs text-navy/50 mt-3">Base ₹169 per tray. 5% off from 10, 10% from 25, 15% from 50, 20% at 100.</p>
+    <a id="bulkWA" class="mt-5 inline-flex items-center gap-2 bg-em hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-full"><i data-lucide="message-circle" class="w-4 h-4"></i>Send Inquiry on WhatsApp</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-ivory py-20">
+ <div class="max-w-7xl mx-auto px-4">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+   <h2 class="font-serif text-3xl sm:text-4xl">What Indiranagar says</h2>
+   <div class="flex items-center gap-4"><span id="avg" class="font-serif text-5xl text-olive">4.9</span><div><div id="avgStars" class="flex"></div><p class="text-sm text-navy/60 mt-1">out of 5 · <span id="cnt">128</span> reviews</p></div></div>
+  </div>
+  <div class="mt-10 grid lg:grid-cols-3 gap-8">
+   <div id="revList" class="lg:col-span-2 grid sm:grid-cols-2 gap-5 content-start"></div>
+   <form id="revForm" class="bg-white rounded-3xl p-6 border border-navy/10 self-start" novalidate>
+    <h3 class="font-serif text-xl">Write a Review &amp; Rate Your Meal</h3>
+    <div id="starPick" class="flex gap-1 mt-4" role="radiogroup" aria-label="Rating"></div>
+    <input id="rName" class="mt-4 w-full border border-navy/15 rounded-xl px-4 py-3 text-sm" placeholder="Your name" aria-label="Your name">
+    <select id="rDish" class="mt-3 w-full border border-navy/15 rounded-xl px-4 py-3 text-sm" aria-label="Dish ordered"></select>
+    <textarea id="rText" rows="3" class="mt-3 w-full border border-navy/15 rounded-xl px-4 py-3 text-sm" placeholder="How was your meal?" aria-label="Review"></textarea>
+    <p id="rErr" class="text-sm text-red-600 mt-2 hidden"></p>
+    <button class="mt-4 w-full bg-em hover:bg-green-800 text-white font-semibold py-3 rounded-full">Submit Review</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<!-- Instagram + FAQ -->
+<section class="py-20">
+ <div class="max-w-7xl mx-auto px-4">
+  <div class="rounded-3xl bg-gradient-to-br from-ivory to-[#efe8d4] border border-olive/15 p-8 sm:p-12 flex flex-wrap items-center justify-between gap-6">
+   <div><h2 class="font-serif text-3xl">Follow the kitchen on Instagram</h2><p class="mt-2 text-navy/70">Daily tiffin stories, today’s menu and behind-the-scenes from @highonfood.blr.</p></div>
+   <a href="https://instagram.com/highonfood.blr" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-full"><i data-lucide="instagram" class="w-5 h-5"></i>Follow @highonfood.blr</a>
+  </div>
+  <div class="max-w-3xl mx-auto mt-20">
+   <h2 class="font-serif text-3xl sm:text-4xl text-center">Questions, answered</h2>
+   <div id="faq" class="mt-8 divide-y divide-navy/10 border-y border-navy/10"></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy text-white/80 pt-16 pb-8">
+ <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+  <div><span data-logo="dark"></span><p class="mt-4 text-sm leading-relaxed">Fresh home-style tiffins and a daily meal kitchen, cooked with zero preservatives.</p></div>
+  <div class="text-sm space-y-2"><p class="font-semibold text-white">Visit &amp; hours</p><p>Indiranagar, Bengaluru, Karnataka 560038</p><p>Mon – Sun: 7:30 AM – 10:30 PM</p><p>Dispatch: 8 AM (morning) and 7 PM (evening)</p></div>
+  <div class="text-sm space-y-2"><p class="font-semibold text-white">Contact</p>
+   <a href="tel:+919102865869" class="flex items-center gap-2 hover:text-[#d9c98a]"><i data-lucide="phone" class="w-4 h-4"></i>+91 91028 65869</a>
+   <a href="https://wa.me/919102865869" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-[#d9c98a]"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp us</a>
+   <a href="https://instagram.com/highonfood.blr" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-[#d9c98a]"><i data-lucide="instagram" class="w-4 h-4"></i>@highonfood.blr</a></div>
+ </div>
+ <p class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-white/10 text-xs text-white/50">© 2026 HoF — High on Food. FSSAI certified kitchen.</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lb" class="fixed inset-0 z-[60] hidden bg-navy/90 p-4 grid place-items-center">
+ <button id="lbClose" class="absolute top-4 right-4 text-white p-2" aria-label="Close"><i data-lucide="x" class="w-7 h-7"></i></button>
+ <img src="./hof-weekly-menu.jpg" alt="Full weekly menu" class="max-w-full max-h-[90vh] rounded-xl bg-white">
+</div>
+
+<!-- Cart drawer -->
+<div id="ov" class="fixed inset-0 z-50 bg-navy/50 hidden"></div>
+<aside id="drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-white shadow-2xl translate-x-full flex flex-col" aria-label="Cart">
+ <div class="flex items-center justify-between p-5 border-b border-navy/10"><h2 class="font-serif text-xl">Your order</h2><button id="closeCart" aria-label="Close cart"><i data-lucide="x" class="w-6 h-6"></i></button></div>
+ <div class="flex-1 overflow-y-auto p-5">
+  <div id="cartItems"></div>
+  <div id="cartExtra" class="hidden">
+   <div class="mt-4 bg-ivory rounded-xl p-4"><p id="shipTxt" class="text-sm font-medium"></p><div class="h-2 bg-white rounded-full mt-2 overflow-hidden"><div id="shipBar" class="h-full bg-em transition-all" style="width:0"></div></div></div>
+   <div class="mt-4 flex gap-2"><input id="promo" class="flex-1 border border-navy/15 rounded-xl px-4 py-2.5 text-sm uppercase" placeholder="Promo code" aria-label="Promo code"><button id="applyPromo" class="bg-navy text-white text-sm font-semibold px-5 rounded-xl">Apply</button></div>
+   <p id="promoMsg" class="text-xs mt-1.5 h-4"></p>
+   <div class="mt-3 space-y-3">
+    <input id="cName" class="w-full border border-navy/15 rounded-xl px-4 py-2.5 text-sm" placeholder="Your name" aria-label="Name">
+    <input id="cPhone" type="tel" class="w-full border border-navy/15 rounded-xl px-4 py-2.5 text-sm" placeholder="Phone number" aria-label="Phone">
+    <textarea id="cAddr" rows="2" class="w-full border border-navy/15 rounded-xl px-4 py-2.5 text-sm" placeholder="Delivery address in Indiranagar" aria-label="Address"></textarea>
+   </div>
+  </div>
+ </div>
+ <div id="cartFoot" class="hidden border-t border-navy/10 p-5 bg-white">
+  <dl class="text-sm space-y-1">
+   <div class="flex justify-between"><dt>Subtotal</dt><dd id="tSub"></dd></div>
+   <div id="rowDisc" class="flex justify-between text-em"><dt>Promo HOF15</dt><dd id="tDisc"></dd></div>
+   <div class="flex justify-between"><dt>Delivery</dt><dd id="tShip"></dd></div>
+   <div class="flex justify-between font-semibold text-base pt-2 border-t border-navy/10"><dt>Total</dt><dd id="tTot"></dd></div>
+  </dl>
+  <p id="cErr" class="text-sm text-red-600 mt-2 hidden"></p>
+  <button id="placeOrder" class="mt-4 w-full bg-em hover:bg-green-800 text-white font-semibold py-3.5 rounded-full flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i>Place Direct Order on WhatsApp</button>
+ </div>
+</aside>
+
+<script>
+const $=s=>document.querySelector(s), WA='https://wa.me/919102865869';
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wa=t=>WA+'?text='+encodeURIComponent(t);
+const icons=()=>lucide.createIcons();
+
+/* Logo */
+const mark=`<svg viewBox="0 0 48 48" class="w-10 h-10" fill="none" aria-hidden="true"><path d="M24 5c6 8 6 18 0 27-6-9-6-19 0-27Z" fill="#B8963E"/><path d="M24 33C14 32 7 25 7 15c9 0 16 6 17 18Z" fill="#4D4827"/><path d="M24 33c10-1 17-8 17-18-9 0-16 6-17 18Z" fill="#4D4827"/><path d="M13 40h22" stroke="#B8963E" stroke-width="2" stroke-linecap="round"/></svg>`;
+document.querySelectorAll('[data-logo]').forEach(el=>{const d=el.dataset.logo==='dark';
+ el.innerHTML=`<span class="inline-flex items-center gap-2.5">${mark}<span class="leading-none"><span class="block font-serif text-2xl font-semibold ${d?'text-white':'text-navy'}">HoF</span><span class="block text-[10px] tracking-[.22em] mt-1 ${d?'text-[#d9c98a]':'text-olive'}">HIGH ON FOOD</span></span></span>`});
+
+/* Menu data */
+const DISHES=[
+{id:'matar',n:'Matar Paneer Masala Meal',c:'paneer',img:'matar-paneer.jpg',t:'520 kcal · 24g protein',d:'Soft paneer and green peas in a rich masala, with 4 phulkas, steamed rice, dal and raita.'},
+{id:'thali',n:'Complete Home-Style Veg Thali',c:'thali',img:'complete-veg-thali.jpg',t:'560 kcal · 20g protein',d:'4 Phulkas, steamed rice, dal, seasonal sabzi, beetroot salad and raita.'},
+{id:'rajma',n:'Rajma & Boondi Raita Meal',c:'paneer',img:'rajma-raita-meal.jpg',t:'540 kcal · 22g protein',d:'Slow-cooked rajma with phulkas, rice, onion salad and boondi raita.'},
+{id:'dal',n:'Dal Tadka & Aloo Sabzi Eco Tray',c:'thali',img:'dal-sabzi-meal-tray.jpg',t:'480 kcal · 18g protein',d:'Tempered dal tadka, aloo sabzi, phulkas, beetroot and onion salad in an eco-friendly tray.'},
+{id:'steel',n:'Paneer Curry Steel Tiffin',c:'paneer steel',img:'paneer-steel-tiffin.jpg',t:'510 kcal · 23g protein',d:'Paneer curry with rice and phulkas, packed in a reusable steel tiffin.'},
+{id:'chilla',n:'High-Protein Besan Chilla Box',c:'breakfast steel',img:'breakfast-chilla-box.jpg',t:'320 kcal · 16g protein',d:'Besan chillas with tomato chutney and mint curd dip, packed in a steel box.'}];
+const SIZES=[['Single Meal Box',149],['Executive Full Thali',199]];
+const TABS=[['all','All Meals'],['thali','Daily Thalis & Trays'],['paneer','Paneer & North Indian'],['breakfast','Healthy Breakfast'],['steel','Steel Tiffin Combos']];
+const sel={}; DISHES.forEach(d=>sel[d.id]=0);
+let filter='all';
+
+function renderTabs(){$('#tabs').innerHTML=TABS.map(([k,l])=>`<button class="tab border border-navy/15 bg-white rounded-full px-5 py-2 text-sm font-medium" aria-pressed="${k===filter}" data-k="${k}">${l}</button>`).join('')}
+function renderGrid(){
+ $('#grid').innerHTML=DISHES.filter(d=>filter==='all'||d.c.split(' ').includes(filter)).map(d=>`
+ <article class="bg-white rounded-3xl overflow-hidden border border-navy/10 flex flex-col">
+  <div class="ph aspect-[4/3]"><img src="./${d.img}" alt="${esc(d.n)}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'"></div>
+  <div class="p-5 flex flex-col flex-1">
+   <div class="flex items-start gap-2"><span class="mt-1.5 w-4 h-4 border-2 border-em grid place-items-center shrink-0" title="Vegetarian"><span class="w-2 h-2 rounded-full bg-em"></span></span><h3 class="font-serif text-lg leading-snug">${d.n}</h3></div>
+   <p class="text-xs font-medium text-olive mt-2">${d.t}</p>
+   <p class="text-sm text-navy/70 mt-2 leading-relaxed flex-1">${d.d}</p>
+   <div class="mt-4 bg-ivory rounded-full p-1 grid grid-cols-2 text-xs">${SIZES.map((s,i)=>`<button class="seg rounded-full py-2" aria-pressed="${sel[d.id]===i}" data-d="${d.id}" data-s="${i}">${s[0]}</button>`).join('')}</div>
+   <div class="mt-4 flex items-center justify-between"><span class="font-serif text-2xl">${inr(SIZES[sel[d.id]][1])}</span><button class="add bg-em hover:bg-green-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full" data-d="${d.id}">Add to Order</button></div>
+  </div></article>`).join('')}
+$('#tabs').onclick=e=>{const b=e.target.closest('.tab');if(b){filter=b.dataset.k;renderTabs();renderGrid()}};
+$('#grid').onclick=e=>{
+ const s=e.target.closest('.seg');if(s){sel[s.dataset.d]=+s.dataset.s;renderGrid();return}
+ const a=e.target.closest('.add');if(a){addItem(a.dataset.d);a.textContent='Added ✓';setTimeout(()=>a.textContent='Add to Order',900)}};
+
+/* Cart */
+let cart=[],disc=0;
+const find=id=>DISHES.find(d=>d.id===id);
+function addItem(id){const size=sel[id],k=id+'-'+size,it=cart.find(i=>i.k===k);it?it.q++:cart.push({k,id,size,q:1});renderCart()}
+function renderCart(){
+ const n=cart.reduce((a,i)=>a+i.q,0);$('#badge').textContent=n;
+ const sub=cart.reduce((a,i)=>a+i.q*SIZES[i.size][1],0),d=Math.round(sub*disc),after=sub-d,free=after>=299,ship=free||!sub?0:30;
+ $('#cartItems').innerHTML=cart.length?cart.map(i=>`<div class="flex gap-3 py-3 border-b border-navy/10"><div class="ph w-16 h-16 rounded-xl overflow-hidden shrink-0"><img src="./${find(i.id).img}" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+ <div class="flex-1 min-w-0"><p class="text-sm font-semibold leading-snug">${find(i.id).n}</p><p class="text-xs text-navy/60">${SIZES[i.size][0]} · ${inr(SIZES[i.size][1])}</p>
+ <div class="flex items-center gap-3 mt-2"><button data-m="-1" data-k="${i.k}" class="w-7 h-7 rounded-full border border-navy/20 grid place-items-center" aria-label="Decrease"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button><span class="text-sm w-4 text-center">${i.q}</span><button data-m="1" data-k="${i.k}" class="w-7 h-7 rounded-full border border-navy/20 grid place-items-center" aria-label="Increase"><i data-lucide="plus" class="w-3.5 h-3.5"></i></button><button data-m="0" data-k="${i.k}" class="ml-auto text-navy/50 hover:text-red-600" aria-label="Remove"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></div>
+ <p class="text-sm font-semibold">${inr(i.q*SIZES[i.size][1])}</p></div>`).join(''):`<p class="text-center text-navy/60 py-16">Your cart is empty. Add a meal from the menu to start your order.</p>`;
+ $('#cartExtra').classList.toggle('hidden',!cart.length);$('#cartFoot').classList.toggle('hidden',!cart.length);
+ $('#shipTxt').textContent=free?'Free Indiranagar delivery unlocked':`Add ${inr(299-after)} more for free Indiranagar delivery`;
+ $('#shipBar').style.width=Math.min(100,after/299*100)+'%';
+ $('#tSub').textContent=inr(sub);$('#rowDisc').classList.toggle('hidden',!d);$('#tDisc').textContent='−'+inr(d);
+ $('#tShip').textContent=ship?inr(ship):'Free';$('#tTot').textContent=inr(after+ship);
+ icons();return{sub,d,ship,total:after+ship}}
+$('#cartItems').onclick=e=>{const b=e.target.closest('[data-m]');if(!b)return;const i=cart.find(x=>x.k===b.dataset.k),m=+b.dataset.m;
+ if(m===0)cart=cart.filter(x=>x!==i);else{i.q+=m;if(i.q<1)cart=cart.filter(x=>x!==i)}renderCart()};
+$('#applyPromo').onclick=()=>{const v=$('#promo').value.trim().toUpperCase(),m=$('#promoMsg');
+ if(v==='HOF15'){disc=.15;m.textContent='HOF15 applied: 15% off';m.className='text-xs mt-1.5 h-4 text-em'}
+ else{disc=0;m.textContent=v?'That code isn’t valid. Try HOF15.':'Enter a promo code.';m.className='text-xs mt-1.5 h-4 text-red-600'}renderCart()};
+const openCart=()=>{$('#drawer').classList.remove('translate-x-full');$('#ov').classList.remove('hidden')};
+const closeCart=()=>{$('#drawer').classList.add('translate-x-full');$('#ov').classList.add('hidden')};
+$('#openCart').onclick=openCart;$('#closeCart').onclick=closeCart;$('#ov').onclick=closeCart;
+$('#placeOrder').onclick=()=>{
+ if(!cart.length)return;
+ const nm=$('#cName').value.trim(),ph=$('#cPhone').value.trim(),ad=$('#cAddr').value.trim(),er=$('#cErr');
+ if(!nm||!/^[+\d\s-]{10,15}$/.test(ph)||!ad){er.textContent='Enter your name, a valid phone number and delivery address.';er.classList.remove('hidden');return}
+ er.classList.add('hidden');const t=renderCart();
+ const lines=cart.map(i=>`• ${find(i.id).n} (${SIZES[i.size][0]}) x${i.q} = ${inr(i.q*SIZES[i.size][1])}`).join('\n');
+ const msg=`Hi HoF! New direct order:\n\n${lines}\n\nSubtotal: ${inr(t.sub)}${t.d?`\nPromo HOF15: −${inr(t.d)}`:''}\nDelivery: ${t.ship?inr(t.ship):'Free'}\nTotal: ${inr(t.total)}\n\nName: ${nm}\nPhone: ${ph}\nAddress: ${ad}`;
+ window.location.href=WA+'?text='+encodeURIComponent(msg)};
+
+/* Lightbox */
+const lb=$('#lb');lb.classList.add('hidden');
+['#zoomBtn','#zoomBtn2'].forEach(s=>$(s).onclick=()=>lb.classList.remove('hidden'));
+lb.onclick=()=>lb.classList.add('hidden');
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.add('hidden');closeCart()}});
+
+/* Plans */
+const PLANS=[
+{n:'5-Day Tiffin Trial',p:699,per:'for 5 days',f:['Try any 5 daily meals','Free Indiranagar delivery','Pause or skip days anytime','Eco-friendly or steel tiffin']},
+{n:'Weekly 6-Day Breakfast + Dinner Plan',p:1299,per:'per week',pop:1,f:['Breakfast and dinner, 6 days','Free Indiranagar delivery','Pause or skip days anytime','Eco-friendly or steel tiffin']},
+{n:'Monthly 24-Day Home-Meal Subscription',p:4499,per:'per month',f:['24 home-style meals','Free Indiranagar delivery','Pause or skip days anytime','Eco-friendly or steel tiffin']}];
+$('#planGrid').innerHTML=PLANS.map(p=>`<div class="bg-white rounded-3xl p-7 flex flex-col relative ${p.pop?'border-2 border-em shadow-xl md:-my-3':'border border-navy/10'}">
+ ${p.pop?'<span class="absolute -top-3 left-7 bg-em text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>':''}
+ <h3 class="font-serif text-xl leading-snug">${p.n}</h3><p class="mt-4"><span class="font-serif text-4xl">${inr(p.p)}</span> <span class="text-sm text-navy/60">${p.per}</span></p>
+ <ul class="mt-6 space-y-3 text-sm flex-1">${p.f.map(x=>`<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-em mt-0.5 shrink-0"></i>${x}</li>`).join('')}</ul>
+ <a href="${wa(`Hi HoF! I’d like to start the ${p.n} (${inr(p.p)}). Please share the next steps.`)}" class="mt-8 text-center ${p.pop?'bg-em hover:bg-green-800 text-white':'border border-navy/20 hover:bg-ivory'} font-semibold py-3 rounded-full">Start Plan on WhatsApp</a></div>`).join('');
+
+/* Bulk estimator */
+function bulk(){const n=+$('#bulk').value,r=n>=100?.2:n>=50?.15:n>=25?.1:.05,pp=Math.round(169*(1-r));
+ $('#bulkN').textContent=n;$('#bulkP').textContent=inr(pp);$('#bulkD').textContent=Math.round(r*100)+'%';$('#bulkT').textContent=inr(pp*n);
+ $('#bulkWA').href=wa(`Hi HoF! Corporate inquiry for ${n} meal trays. Estimated ${inr(pp)} per tray, ${inr(pp*n)} total. Please confirm availability and delivery date.`)}
+$('#bulk').oninput=bulk;bulk();
+
+/* Reviews */
+let base={avg:4.9,n:128},added=[],rating=0;
+const stars=(n,c='w-4 h-4')=>[1,2,3,4,5].map(i=>`<i data-lucide="star" class="${c} ${i<=Math.round(n)?'text-[#B8963E] fill-[#B8963E]':'text-navy/20'}"></i>`).join('');
+const REV=[['Ananya R.','Indiranagar',5,'Complete Home-Style Veg Thali','Tastes like my mother’s kitchen. The phulkas arrive soft and the dal is never oily.'],
+['Karthik S.','HAL 2nd Stage',5,'Matar Paneer Masala Meal','Better than anything I ordered on apps, and noticeably cheaper. Paneer is fresh every time.'],
+['Meera N.','100 Feet Road',5,'Besan Chilla Box','Perfect protein-rich breakfast before work. The steel box keeps it warm.'],
+['Rohit P.','Domlur',4,'Rajma & Boondi Raita Meal','Great rajma and always on time. Would love a slightly larger raita.']];
+const card=r=>`<article class="bg-white rounded-2xl p-5 border border-navy/10"><div class="flex">${stars(r[2])}</div><p class="text-sm mt-3 leading-relaxed">${esc(r[4])}</p><p class="mt-4 text-sm font-semibold">${esc(r[0])}</p><p class="text-xs text-navy/60">${esc(r[3])} · ${esc(r[1])}</p></article>`;
+function renderRev(){const n=base.n+added.length,avg=(base.avg*base.n+added.reduce((a,r)=>a+r[2],0))/n;
+ $('#avg').textContent=avg.toFixed(1);$('#cnt').textContent=n;$('#avgStars').innerHTML=stars(avg,'w-5 h-5');
+ $('#revList').innerHTML=[...added].reverse().concat(REV).map(card).join('');icons()}
+function renderPick(){$('#starPick').innerHTML=[1,2,3,4,5].map(i=>`<button type="button" role="radio" aria-checked="${rating===i}" aria-label="${i} star" data-r="${i}"><i data-lucide="star" class="w-8 h-8 ${i<=rating?'text-[#B8963E] fill-[#B8963E]':'text-navy/25'}"></i></button>`).join('');icons()}
+$('#starPick').onclick=e=>{const b=e.target.closest('[data-r]');if(b){rating=+b.dataset.r;renderPick()}};
+$('#rDish').innerHTML='<option value="">Dish ordered</option>'+DISHES.map(d=>`<option>${d.n}</option>`).join('');
+$('#revForm').onsubmit=e=>{e.preventDefault();const nm=$('#rName').value.trim(),dish=$('#rDish').value,tx=$('#rText').value.trim(),er=$('#rErr');
+ if(!rating||!nm||!dish||!tx){er.textContent='Choose a star rating, then add your name, dish and review.';er.classList.remove('hidden');return}
+ er.classList.add('hidden');added.push([nm,'Verified customer',rating,dish,tx]);rating=0;e.target.reset();renderPick();renderRev()};
+
+/* FAQ */
+const FAQ=[['What are your delivery timings?','We dispatch fresh at 8 AM for morning meals and 7 PM for evening meals, every day. Kitchen hours are 7:30 AM to 10:30 PM.'],
+['Can you make Jain or no-onion-garlic meals?','Yes. Add “Jain” or “no onion garlic” in your order message on WhatsApp and we will cook your meal that way.'],
+['How do I skip or pause subscription days?','Message us on WhatsApp before the previous evening’s dispatch and we will pause that day. Skipped days are added back to your plan.'],
+['Is delivery free?','Delivery in Indiranagar is free on orders of ₹299 or more and on every subscription plan.']];
+$('#faq').innerHTML=FAQ.map(([q,a])=>`<details class="py-5 group"><summary class="flex justify-between items-center cursor-pointer font-medium list-none">${q}<i data-lucide="chevron-down" class="chev w-5 h-5 transition-transform shrink-0 ml-4"></i></summary><p class="mt-3 text-sm text-navy/70 leading-relaxed">${a}</p></details>`).join('');
+
+/* Nav */
+$('#burger').onclick=()=>$('#mobnav').classList.toggle('hidden');
+$('#mobnav').onclick=e=>{if(e.target.tagName==='A')$('#mobnav').classList.add('hidden')};
+
+renderTabs();renderGrid();renderCart();renderRev();renderPick();icons();
+</script>
+</body>
+</html>
